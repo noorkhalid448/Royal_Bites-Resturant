@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Royal Bites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Royal Bites</a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #333; padding-bottom:15px;">
+                <h3 style="color:#d4af37;">Your Order</h3>
+                <button onclick="toggleCart()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+            </div>
+            <div id="cart-items" style="margin-top:15px; max-height:60vh; overflow-y:auto;"></div>
+        </div>
+
+        <div style="border-top:1px solid #333; padding-top:15px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:18px;">
+                <span>Total:</span>
+                <strong id="cart-total" style="color:#d4af37;">Rs. 0</strong>
+            </div>
+            <button class="btn" style="width:100%;" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">Our Special Menu</h2>
+
+        <div style="max-width: 450px; margin: 0 auto 25px;">
+            <input type="text" id="menu-search" onkeyup="searchMenu()" placeholder="🔍 Search dishes (e.g. Karahi, Kabab, Mint)..." 
+            style="width:100%; padding:12px 18px; border-radius:25px; border:1px solid #444; background:#1e1e1e; color:#fff; outline:none;">
+        </div>
+
+        <div class="filter-btns">
+            <button class="filter-btn active" onclick="filterMenu('All', this)">All Dishes</button>
+            <button class="filter-btn" onclick="filterMenu('Karahi', this)">Desi & Karahi</button>
+            <button class="filter-btn" onclick="filterMenu('BBQ', this)">Sizzling BBQ</button>
+            <button class="filter-btn" onclick="filterMenu('Drinks', this)">Drinks</button>
+            <button class="filter-btn" onclick="filterMenu('Desserts', this)">Desserts</button>
+        </div>
+
+        <div class="menu-grid" id="menu-container"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Royal Bites Restaurant. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
