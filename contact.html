@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Royal Bites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Royal Bites</a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #333; padding-bottom:15px;">
+                <h3 style="color:#d4af37;">Your Order</h3>
+                <button onclick="toggleCart()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+            </div>
+            <div id="cart-items" style="margin-top:15px; max-height:60vh; overflow-y:auto;"></div>
+        </div>
+
+        <div style="border-top:1px solid #333; padding-top:15px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:18px;">
+                <span>Total:</span>
+                <strong id="cart-total" style="color:#d4af37;">Rs. 0</strong>
+            </div>
+            <button class="btn" style="width:100%;" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">Book a Table / Contact Us</h2>
+        
+        <div class="contact-container">
+            <div style="border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px;">
+                <p><strong>📍 Address:</strong> Main Boulevard, Gulberg, Lahore</p>
+                <p><strong>📞 Phone:</strong> 0300-1234567 | <strong>🕒 Hours:</strong> 12:00 PM – 12:00 AM</p>
+            </div>
+
+            <form id="contactForm">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+                
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="03XX-XXXXXXX" required>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label>Reservation Date</label>
+                        <input type="date" id="res-date" required>
+                    </div>
+                    <div>
+                        <label>Guests</label>
+                        <select id="guests" required>
+                            <option value="2 Persons">2 Persons</option>
+                            <option value="4 Persons">4 Persons</option>
+                            <option value="6 Persons">6 Persons</option>
+                            <option value="Family Hall (8+)">Family Hall (8+)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <label>Special Requests (Optional)</label>
+                <textarea id="message" rows="3" placeholder="Any dietary preferences or special occasion notes..."></textarea>
+                
+                <button type="submit" class="btn" style="width:100%;">Confirm Table Reservation</button>
+            </form>
+
+            <div id="booking-success" style="display:none; margin-top:20px; padding:15px; background:#142b1d; border:1px solid #28a745; border-radius:6px; text-align:center;">
+                <h4 style="color:#4cd137;">✅ Reservation Request Received!</h4>
+                <p id="booking-summary" style="font-size:14px; margin:10px 0; color:#ddd;"></p>
+                <button id="whatsapp-booking-btn" class="btn" style="font-size:14px; padding:8px 18px;">Send Confirmation on WhatsApp</button>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 35px auto 0; border-radius: 8px; overflow: hidden; border: 1px solid #333;">
+            <iframe 
+                src="https://google.com" 
+                width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Royal Bites Restaurant. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
