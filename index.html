@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Bites | Fine Dining & Desi Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Royal Bites</a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #333; padding-bottom:15px;">
+                <h3 style="color:#d4af37;">Your Order</h3>
+                <button onclick="toggleCart()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+            </div>
+            <div id="cart-items" style="margin-top:15px; max-height:60vh; overflow-y:auto;"></div>
+        </div>
+
+        <div style="border-top:1px solid #333; padding-top:15px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:18px;">
+                <span>Total:</span>
+                <strong id="cart-total" style="color:#d4af37;">Rs. 0</strong>
+            </div>
+            <button class="btn" style="width:100%;" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Welcome to Royal Bites</h1>
+        <p>Experience the royal taste of authentic spices, sizzling charcoal BBQ, and unforgettable hospitality.</p>
+        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+            <a href="menu.html" class="btn">Explore Our Menu</a>
+            <a href="contact.html" class="btn" style="background:transparent; border:2px solid #d4af37; color:#d4af37;">Book a Table</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Why Choose Royal Bites?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>🌿 Fresh Ingredients</h3>
+                <p>Every dish is crafted daily using hand-picked spices, farm-fresh vegetables, and premium cuts of meat.</p>
+            </div>
+            <div class="card">
+                <h3>👨‍🍳 Master Chefs</h3>
+                <p>Our culinary experts preserve traditional royal recipes while delivering modern fine-dining presentation.</p>
+            </div>
+            <div class="card">
+                <h3>✨ Royal Ambiance</h3>
+                <p>A serene, luxurious, and family-friendly dining environment designed for memorable gatherings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#181818;">
+        <h2 class="section-title">What Our Guests Say</h2>
+        <div class="cards-container">
+            <div class="card">
+                <p>"The Mutton Karahi and Malai Boti are unmatched in taste. Truly a royal dining experience!"</p>
+                <h4 style="color:#d4af37; margin-top:15px;">— Ahmed Raza, Lahore</h4>
+            </div>
+            <div class="card">
+                <p>"Fast WhatsApp ordering and warm hospitality. Best place in town for family dinners."</p>
+                <h4 style="color:#d4af37; margin-top:15px;">— Ayesha Khan</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Royal Bites Restaurant. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
