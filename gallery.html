@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Royal Bites</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Royal Bites</a>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </li>
+        </ul>
+    </header>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #333; padding-bottom:15px;">
+                <h3 style="color:#d4af37;">Your Order</h3>
+                <button onclick="toggleCart()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+            </div>
+            <div id="cart-items" style="margin-top:15px; max-height:60vh; overflow-y:auto;"></div>
+        </div>
+
+        <div style="border-top:1px solid #333; padding-top:15px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-size:18px;">
+                <span>Total:</span>
+                <strong id="cart-total" style="color:#d4af37;">Rs. 0</strong>
+            </div>
+            <button class="btn" style="width:100%;" onclick="checkoutWhatsApp()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">Food & Ambiance Gallery</h2>
+        <p style="color:#bbb; margin-top:-25px; margin-bottom:35px;">Click on any photo to view full screen</p>
+
+        <div class="gallery-grid">
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF0gvxxdyK74oh_mGKkFicXEvL3ZzF1eis8P3G1jhZeA&s=10" alt="Signature mint margarita, a refreshing drink presented as part of the Royal Bites restaurant gallery." onclick="openLightbox(this)" style="cursor:pointer;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGq3sgVhY5o5LU-aa_qIA73ZyEvCq5l2M922sdcMMTlQ&s=10" alt="Signature mint margarita, a refreshing drink presented as part of the Royal Bites restaurant gallery." onclick="openLightbox(this)" style="cursor:pointer;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrFB9MeC_6yr621glIee5rOfTy-YraYnVYisssb86Xag&s=10" alt="A prepared restaurant dish featured in the Royal Bites food gallery." onclick="openLightbox(this)" style="cursor:pointer;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkUs6OjZ2pq82Ps-LSZCq-uA-uZ_7eXMzCYAmWG5EFqA&s=10" alt="A plated savory dish featured in the Royal Bites restaurant gallery." onclick="openLightbox(this)" style="cursor:pointer;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS88p53rDJDmXrb5X3jk4ptgVr0lPAGgDx1fsUlArUSOw&s=10" alt="Signature mint margarita, a refreshing drink presented as part of the Royal Bites restaurant gallery." onclick="openLightbox(this)" style="cursor:pointer;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzoK1qwMlE_44erWZYJ7k9CDx8uMH9QhKlYK1NibPRkA&s=10" alt="Royal Shahi Tukray, a traditional South Asian dessert featured as a sweet restaurant offering." onclick="openLightbox(this)" style="cursor:pointer;">
+        </div>
+    </section>
+
+    <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:3000; justify-content:center; align-items:center; flex-direction:column; padding:20px;">
+        <span style="position:absolute; top:25px; right:35px; color:#d4af37; font-size:35px; cursor:pointer;">&times;</span>
+        <img id="lightbox-img" src="" style="max-width:90%; max-height:75vh; border-radius:8px; border:2px solid #d4af37;">
+        <h3 id="lightbox-caption" style="color:#d4af37; margin-top:15px;"></h3>
+        <a href="menu.html" class="btn" style="margin-top:12px;">Order From Menu</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Royal Bites Restaurant. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
