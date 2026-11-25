@@ -259,7 +259,7 @@ function checkoutWhatsApp() {
     message += `\nTotal Bill: Rs. ${total}`;
 
     const whatsappURL =
-        `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(message)}`;
+       `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(message)}`
 
     window.open(whatsappURL, '_blank');
 }
@@ -305,8 +305,7 @@ if (contactForm) {
                 `• Notes: ${notes}`;
 
             const whatsappURL =
-                `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(msg)}`;
-
+               `https://wa.me/${RESTAURANT_WHATSAPP}?text=${encodeURIComponent(message)}`
             window.open(whatsappURL, '_blank');
         };
 
@@ -339,4 +338,3 @@ function closeLightbox() {
 // 13. Initialize Menu & Cart on Page Load
 displayMenu(menuData);
 updateCartUI();
-
